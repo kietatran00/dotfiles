@@ -13,7 +13,7 @@ return {
     workspaces = {
       {
         name = "second-brain",
-        path = "/mnt/c/Users/Kiet/Documents/second-brain",
+        path = "/mnt/c/Users/kiet.tran/Documents/second-brain",
       }
     },
 
