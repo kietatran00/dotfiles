@@ -5,4 +5,4 @@ git add --all .
 
 git commit -m "this is not best practice"
 
-git push
+git push --repo=https://github.com/kietatran00/dotfiles.git 
