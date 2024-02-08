@@ -6,7 +6,7 @@ return {
     };
   config = function()
     require("dapui").setup()
-    require("dap-python").setup("/home/kiet/.virtualenvs/debugpy/bin/python")
+    require("dap-python").setup("~/.local/share/nvim/mason/packages/debugpy/venv/bin/python")
     local dap, dapui = require("dap"), require("dapui")
 
     dap.listeners.before.attach.dapui_config = function()
@@ -28,3 +28,4 @@ return {
     vim.keymap.set("n", "<Leader>do", ":DapStepOver<CR>")
   end,
 }
+
