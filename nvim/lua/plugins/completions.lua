@@ -1,6 +1,6 @@
- return {
+return {
   {
-    "hrsh7th/cmp-nvim-lsp"
+    "hrsh7th/cmp-nvim-lsp",
   },
   {
     "L3MON4D3/LuaSnip",
@@ -8,6 +8,9 @@
       "saadparwaiz1/cmp_luasnip",
       "rafamadriz/friendly-snippets",
     },
+  },
+  {
+    "hrsh7th/cmp-buffer",
   },
   {
     "hrsh7th/nvim-cmp",
@@ -35,8 +38,32 @@
         sources = cmp.config.sources({
           { name = "nvim_lsp" },
           { name = "luasnip" }, -- For luasnip users.
-        }, {
           { name = "buffer" },
+        }),
+      })
+    end,
+  },
+  {
+    "hrsh7th/cmp-cmdline",
+    config = function()
+      local cmp = require("cmp")
+      cmp.setup.cmdline("/", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = {
+          { name = "buffer" },
+        },
+      })
+      cmp.setup.cmdline(":", {
+        mapping = cmp.mapping.preset.cmdline(),
+        sources = cmp.config.sources({
+          { name = "path" },
+        }, {
+          {
+            name = "cmdline",
+            option = {
+              ignore_cmds = { "Man", "!" },
+            },
+          },
         }),
       })
     end,

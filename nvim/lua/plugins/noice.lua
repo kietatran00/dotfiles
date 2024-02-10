@@ -27,6 +27,7 @@ return {
         inc_rename = false,
         lsp_doc_border = false,
       },
+    vim.keymap.set("n", "<leader>nd", "<cmd>NoiceDismiss<CR>", {desc = "Dismess Noice Message"})
     })
   end,
 }
